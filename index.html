@@ -1,0 +1,132 @@
+<script>
+var exports = {};
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script src="nogamejs.js"> </script>
+<script src="perlin.js"> </script>
+<script src="imagedata.js"> </script>
+<script src="main.js"> </script>
+
+<script>
+//$(main);
+</script>
+
+<canvas id="map"></canvas> 
+
+<style>
+.nono {
+  display: none;
+}
+</style>
+
+<img src="images/dec/iso2_62.png" id="iso2_62" class=nono>
+<img src="images/dec/iso2_63.png" id="iso2_63" class=nono>
+<img src="images/dec/iso2_70.png" id="iso2_70" class=nono>
+<img src="images/dec/iso2_71.png" id="iso2_71" class=nono>
+<img src="images/dec/iso2_72.png" id="iso2_72" class=nono>
+<img src="images/dec/iso2_73.png" id="iso2_73" class=nono>
+<img src="images/dec/iso_110.png" id="iso_110" class=nono>
+<img src="images/dec/iso_111.png" id="iso_111" class=nono>
+<img src="images/dec/iso_112.png" id="iso_112" class=nono>
+<img src="images/dec/iso_113.png" id="iso_113" class=nono>
+<img src="images/dec/iso_114.png" id="iso_114" class=nono>
+<img src="images/dec/iso_115.png" id="iso_115" class=nono>
+<img src="images/dec/iso_116.png" id="iso_116" class=nono>
+<img src="images/dec/iso_117.png" id="iso_117" class=nono>
+<img src="images/dec/iso_118.png" id="iso_118" class=nono>
+<img src="images/dec/iso_119.png" id="iso_119" class=nono>
+<img src="images/dec/iso_120.png" id="iso_120" class=nono>
+<img src="images/dec/iso_121.png" id="iso_121" class=nono>
+<img src="images/dec/iso_124.png" id="iso_124" class=nono>
+<img src="images/dec/iso_125.png" id="iso_125" class=nono>
+<img src="images/dec/iso_126.png" id="iso_126" class=nono>
+<img src="images/dec/iso_127.png" id="iso_127" class=nono>
+<img src="images/dec/iso_128.png" id="iso_128" class=nono>
+<img src="images/dec/iso_129.png" id="iso_129" class=nono>
+<img src="images/dec/iso_66.png" id="iso_66" class=nono>
+<img src="images/dec/iso_67.png" id="iso_67" class=nono>
+<img src="images/dec/iso_68.png" id="iso_68" class=nono>
+<img src="images/dec/iso_69.png" id="iso_69" class=nono>
+<img src="images/dec/iso_70.png" id="iso_70" class=nono>
+<img src="images/elev/iso_34.png" id="iso_34" class=nono>
+<img src="images/elev/iso_54.png" id="iso_54" class=nono>
+<img src="images/elev/iso_55.png" id="iso_55" class=nono>
+<img src="images/elev/iso_60.png" id="iso_60" class=nono>
+<img src="images/elev/iso_61.png" id="iso_61" class=nono>
+<img src="images/elev/iso_62.png" id="iso_62" class=nono>
+<img src="images/elev/iso_63.png" id="iso_63" class=nono>
+<img src="images/elev/iso_64.png" id="iso_64" class=nono>
+<img src="images/elev/iso_65.png" id="iso_65" class=nono>
+<img src="images/elev/iso_71.png" id="iso_71" class=nono>
+<img src="images/elev/iso_72.png" id="iso_72" class=nono>
+<img src="images/elev/iso_73.png" id="iso_73" class=nono>
+<img src="images/elev/iso_74.png" id="iso_74" class=nono>
+<img src="images/elev/iso_75.png" id="iso_75" class=nono>
+<img src="images/elev/iso_76.png" id="iso_76" class=nono>
+<img src="images/elev/iso_77.png" id="iso_77" class=nono>
+<img src="images/elev/iso_78.png" id="iso_78" class=nono>
+<img src="images/elev/iso_79.png" id="iso_79" class=nono>
+<img src="images/slope/iso_30.png" id="iso_30" class=nono>
+<img src="images/slope/iso_31.png" id="iso_31" class=nono>
+<img src="images/slope/iso_32.png" id="iso_32" class=nono>
+<img src="images/slope/iso_33.png" id="iso_33" class=nono>
+<img src="images/slope/iso_35.png" id="iso_35" class=nono>
+<img src="images/slope/iso_36.png" id="iso_36" class=nono>
+<img src="images/slope/iso_37.png" id="iso_37" class=nono>
+<img src="images/slope/iso_38.png" id="iso_38" class=nono>
+<img src="images/slope/iso_40.png" id="iso_40" class=nono>
+<img src="images/slope/iso_41.png" id="iso_41" class=nono>
+<img src="images/slope/iso_42.png" id="iso_42" class=nono>
+<img src="images/slope/iso_43.png" id="iso_43" class=nono>
+<img src="images/slope/iso_50.png" id="iso_50" class=nono>
+<img src="images/slope/iso_51.png" id="iso_51" class=nono>
+<img src="images/slope/iso_52.png" id="iso_52" class=nono>
+<img src="images/slope/iso_53.png" id="iso_53" class=nono>
+<img src="images/slope/iso_56.png" id="iso_56" class=nono>
+<img src="images/slope/iso_57.png" id="iso_57" class=nono>
+<img src="images/slope/iso_58.png" id="iso_58" class=nono>
+<img src="images/slope/iso_59.png" id="iso_59" class=nono>
+<img src="images/tiles/iso_0.png" id="iso_0" class=nono>
+<img src="images/tiles/iso_1.png" id="iso_1" class=nono>
+<img src="images/tiles/iso_10.png" id="iso_10" class=nono>
+<img src="images/tiles/iso_11.png" id="iso_11" class=nono>
+<img src="images/tiles/iso_12.png" id="iso_12" class=nono>
+<img src="images/tiles/iso_13.png" id="iso_13" class=nono>
+<img src="images/tiles/iso_14.png" id="iso_14" class=nono>
+<img src="images/tiles/iso_15.png" id="iso_15" class=nono>
+<img src="images/tiles/iso_16.png" id="iso_16" class=nono>
+<img src="images/tiles/iso_17.png" id="iso_17" class=nono>
+<img src="images/tiles/iso_2.png" id="iso_2" class=nono>
+<img src="images/tiles/iso_20.png" id="iso_20" class=nono>
+<img src="images/tiles/iso_21.png" id="iso_21" class=nono>
+<img src="images/tiles/iso_22.png" id="iso_22" class=nono>
+<img src="images/tiles/iso_23.png" id="iso_23" class=nono>
+<img src="images/tiles/iso_3.png" id="iso_3" class=nono>
+<img src="images/tiles/iso_4.png" id="iso_4" class=nono>
+<img src="images/tiles/iso_5.png" id="iso_5" class=nono>
+<img src="images/tiles/iso_6.png" id="iso_6" class=nono>
+<img src="images/water/iso_100.png" id="iso_100" class=nono>
+<img src="images/water/iso_101.png" id="iso_101" class=nono>
+<img src="images/water/iso_102.png" id="iso_102" class=nono>
+<img src="images/water/iso_80.png" id="iso_80" class=nono>
+<img src="images/water/iso_81.png" id="iso_81" class=nono>
+<img src="images/water/iso_82.png" id="iso_82" class=nono>
+<img src="images/water/iso_83.png" id="iso_83" class=nono>
+<img src="images/water/iso_84.png" id="iso_84" class=nono>
+<img src="images/water/iso_85.png" id="iso_85" class=nono>
+<img src="images/water/iso_86.png" id="iso_86" class=nono>
+<img src="images/water/iso_87.png" id="iso_87" class=nono>
+<img src="images/water/iso_88.png" id="iso_88" class=nono>
+<img src="images/water/iso_89.png" id="iso_89" class=nono>
+<img src="images/water/iso_90.png" id="iso_90" class=nono>
+<img src="images/water/iso_91.png" id="iso_91" class=nono>
+<img src="images/water/iso_92.png" id="iso_92" class=nono>
+<img src="images/water/iso_93.png" id="iso_93" class=nono>
+<img src="images/water/iso_94.png" id="iso_94" class=nono>
+<img src="images/water/iso_95.png" id="iso_95" class=nono>
+<img src="images/water/iso_96.png" id="iso_96" class=nono>
+<img src="images/water/iso_97.png" id="iso_97" class=nono>
+<img src="images/water/iso_98.png" id="iso_98" class=nono>
+<img src="images/water/iso_99.png" id="iso_99" class=nono>

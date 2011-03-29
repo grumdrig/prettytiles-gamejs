@@ -1,4 +1,4 @@
-var gamejs = require('gamejs');
+//var gamejs = require('gamejs');
 
 exports.dec_names = [
 "images/dec/iso2_62.png",
@@ -126,7 +126,7 @@ exports.water_names = [
 
 function loadTiles(tiles) {
    return tiles.map(function(t) {
-      return gamejs.image.load(t);
+      return gamejs./*image.*/load(t);
    });
 };
 

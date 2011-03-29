@@ -13,10 +13,12 @@
  *
  */
 
-var gamejs = require('gamejs');
-
-var perlin = require('./perlin');
-var idata = require('./imagedata');
+//var gamejs = require('gamejs');
+var gamejs = exports;
+//var perlin = require('./perlin');
+var perlin = exports;
+//var idata = require('./imagedata');
+var idata = exports;
 
 // setup noise fn
 var n = new perlin.ClassicalNoise();
@@ -80,8 +82,6 @@ function main() {
    };
 
    function draw() {
-      display.clear();
-
       //t += 0.00001;
       xoff += ew_mv_size;
       yoff -= ns_mv_size;
@@ -171,7 +171,7 @@ if (true) {
                   if (idata.dec[ind] != null) {
                      display.blit(idata.dec[ind],
                         [x_rot,
-                        y_rot - (elevation-2)*elev_factor - idata.dec[ind].rect.height
+                        y_rot - (elevation-2)*elev_factor - idata.dec[ind].height
                         ]
                      );
                   }
@@ -192,19 +192,21 @@ if (true) {
 }
 
 
-   function tick(msDuration) {
-      gamejs.event.get().forEach(handleEvent);
-      draw();
+  function tick(msDuration) {
+    //gamejs.event.get().forEach(handleEvent);
+    draw();
+  };
 
-   };
-
-   gamejs.time.fpsCallback(tick, this, 7);
+  setInterval(tick, 1000/7);
+  //gamejs.time.fpsCallback(tick, this, 7);
 };
 
 
-// preload & start
-gamejs.preload(idata.tile_names);
-gamejs.preload(idata.dec_names);
-gamejs.preload(idata.elev_names);
-gamejs.preload(idata.slope_names);
-gamejs.ready(main);
+$(function() {
+  // preload & start
+  gamejs.preload(idata.tile_names);
+  gamejs.preload(idata.dec_names);
+  gamejs.preload(idata.elev_names);
+  gamejs.preload(idata.slope_names);
+  main();
+});
