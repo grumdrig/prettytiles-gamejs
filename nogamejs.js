@@ -12,46 +12,7 @@ exports.preload = function(imgIdents) {
     var ky = imgIdents[index].replace(/.+\//g, "").replace(/\..+/g, "");
     CACHE[key] = $("#" + ky)[0];
   }
-  return;
-
-  /*
-   var countLoaded = 0;
-
-   var incrementLoaded = function() {
-      countLoaded++;
-      if (countLoaded == TOTAL_IMGS) {
-         _PRELOADING = false;
-      }
-      if (countLoaded % 10 == 0) {
-         gamejs.log('loaded  ' + countLoaded + ' of ' + TOTAL_IMGS);
-      }
-   };
-*/
-   for (var key in imgIdents) {
-      if (key.indexOf('png') == -1 && key.indexOf('jpg') == -1 && key.indexOf('gif') == -1) {
-         continue;
-      }
-  //    TOTAL_IMGS++;
-      var img = new Image();
-      img.addEventListener('load',function() {
-         addToCache(this);
-  //       incrementLoaded();
-         return;
-      }, true);
-      img.addEventListener('error', function() {
-         incrementLoaded();
-      	throw new Error('Error loading ' + this.src);
-         return;
-      }, true);
-      img.src = imgIdents[key];
-      img.gamejsKey = key;
-   }
-//   if (TOTAL_IMGS > 0) {
-//      _PRELOADING = true;
-//   }
-   return;
 };
-
 
 exports.display = {};
 exports.display.setMode = function(rect) {
@@ -80,20 +41,4 @@ exports.load = function(key) {
       img = key;
    }
   return img;
-
-
-   var canvas = document.createElement('canvas');
-   // IEFIX missing html5 feature naturalWidth/Height
-   canvas.width = img.naturalWidth || img.width;
-   canvas.height = img.naturalHeight || img.height;
-   var context = canvas.getContext('2d');
-   //context.fillStyle = "#00ff00";
-   //context.fillRect(0, 0, canvas.width, canvas.height);
-   context.drawImage(img, 0, 0)
-   img.getSize = function() { return [img.naturalWidth, img.naturalHeight]; };
-  return canvas;
-  //var surface = new gamejs.Surface(img.getSize());
-   // NOTE hack setting _canvas directly, don't do this yourself
-   //surface._canvas = canvas;
-   //return surface;
 };
